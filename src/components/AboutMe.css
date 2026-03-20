@@ -7,13 +7,13 @@
 .about-text-main {
     font-size: clamp(1.4rem, 3vw, 2.2rem);
     line-height: 1.5;
-    color: #eee;
+    color: var(--text-secondary);
     font-weight: 300;
     margin-bottom: 80px;
 }
 
 .about-text-main strong {
-    color: #fff;
+    color: var(--text-main);
     font-weight: 500;
 }
 
@@ -21,7 +21,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid var(--border-color);
     padding-top: 40px;
 }
 
@@ -35,12 +35,12 @@
     font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 0.3em;
-    color: #555;
+    color: var(--text-muted);
 }
 
 .detail-value {
     font-size: 1rem;
-    color: #A0A0A0;
+    color: var(--text-secondary);
     font-weight: 300;
 }
 
@@ -52,5 +52,6 @@
 
     .about-text-main {
         font-size: 1.3rem;
+        margin-bottom: 40px;
     }
 }

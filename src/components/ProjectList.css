@@ -10,11 +10,12 @@
 
 .project-item-link {
     text-decoration: none;
-    color: #fff;
+    color: var(--text-main);
     display: block;
     width: 100%;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid var(--border-color);
     outline: none;
+    overflow: hidden;
 }
 
 .project-item-content {
@@ -33,13 +34,14 @@
 }
 
 .project-item-link:hover .project-item-content {
-    border-color: rgba(255, 255, 255, 0.5);
+    border-color: var(--accent-color);
+    /* Borde rojo en hover */
 }
 
 .project-number {
     font-family: monospace;
     font-size: 0.75rem;
-    color: #555;
+    color: var(--text-muted);
 }
 
 .project-title {
@@ -53,7 +55,13 @@
     font-size: 0.65rem;
     text-transform: uppercase;
     letter-spacing: 0.25em;
-    color: #666;
+    color: var(--text-muted);
+    transition: color 0.4s ease;
+}
+
+.project-item-link:hover .project-category {
+    color: var(--accent-color);
+    /* Texto rojo en hover */
 }
 
 @media (max-width: 768px) {

@@ -56,16 +56,19 @@ const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
         opacity: 1,
-        transition: { staggerChildren: 0.1 }
+        transition: {
+            staggerChildren: 0.05,
+            delayChildren: 0.1
+        }
     }
 };
 
 const itemVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
+    hidden: { opacity: 0, y: 15 },
     visible: {
         opacity: 1,
-        scale: 1,
-        transition: { duration: 0.5, ease: "easeOut" }
+        y: 0,
+        transition: { duration: 0.3, ease: "easeOut" }
     }
 };
 
@@ -76,7 +79,7 @@ const Skills = () => {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.1 }}
         >
             {skillCategories.map((category, index) => (
                 <div key={index} className="skills-column">
@@ -87,9 +90,15 @@ const Skills = () => {
                                 key={i}
                                 className="skill-icon-wrapper"
                                 variants={itemVariants}
-                                whileHover={{ y: -10, color: "#fff" }}
+                                whileHover={{
+                                    y: -10,
+                                    color: "var(--text-main)",
+                                    transition: { duration: 0.2 }
+                                }}
                             >
-                                <div className="icon-box">{skill.icon}</div>
+                                <div className="icon-box">
+                                    {skill.icon}
+                                </div>
                                 <span className="skill-name">{skill.name}</span>
                             </motion.div>
                         ))}

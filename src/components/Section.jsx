@@ -17,7 +17,7 @@ const Section = ({ children, range, zIndex }) => {
     });
 
     const pointerEvents = useTransform(opacity, (value) => {
-        return value > 0.5 ? "all" : "none";
+        return value > 0.1 ? "all" : "none";
     });
 
     return (

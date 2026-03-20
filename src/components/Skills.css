@@ -14,18 +14,17 @@
 
 .column-label {
     font-size: 0.9rem;
-    /* Títulos de categoría más grandes */
     text-transform: uppercase;
     letter-spacing: 0.4em;
-    color: #555;
+    color: var(--text-muted);
     font-weight: 600;
+    margin-bottom: 20px;
 }
 
 .skills-list {
     display: flex;
     flex-wrap: wrap;
     gap: 45px;
-    /* Más espacio entre los iconos más grandes */
 }
 
 .skill-icon-wrapper {
@@ -33,13 +32,18 @@
     flex-direction: column;
     align-items: center;
     gap: 15px;
-    color: #A0A0A0;
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.skill-icon-wrapper:hover {
+    color: var(--text-main);
+    transform: translateY(-5px);
 }
 
 .icon-box {
     font-size: 3rem;
-    /* Iconos notablemente más grandes */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -47,29 +51,40 @@
 
 .skill-name {
     font-size: 0.75rem;
-    /* Texto de aptitud ligeramente más grande */
     text-transform: uppercase;
     letter-spacing: 0.15em;
     font-weight: 500;
+    text-align: center;
 }
 
-.skill-icon-wrapper:hover {
-    color: #FFFFFF;
-    transform: translateY(-10px);
-}
-
-.skill-icon-wrapper:hover .icon-box {
-    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.2));
-}
-
-@media (max-width: 968px) {
+@media (max-width: 1024px) {
     .skills-grid {
-        grid-template-columns: 1fr;
-        gap: 60px;
+        gap: 40px;
     }
 
     .skills-list {
-        justify-content: flex-start;
-        gap: 35px;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-top: 20px;
+    }
+
+    .skills-list {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .skills-column {
+        align-items: center;
+        gap: 25px;
+    }
+
+    .icon-box {
+        font-size: 2.2rem;
     }
 }

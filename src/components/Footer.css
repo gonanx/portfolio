@@ -1,0 +1,23 @@
+.footer-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0 40px 0;
+    border-top: 1px solid var(--border-color);
+    margin-top: auto;
+}
+
+.footer-credits {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        padding: 40px 0 20px 0;
+    }
+}

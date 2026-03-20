@@ -1,7 +1,25 @@
 :root {
-  background-color: #000;
-  color: #fff;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  --bg-color: #000000;
+  --text-main: #ffffff;
+  --text-secondary: #a0a0a0;
+  --text-muted: #555555;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --accent-color: #e0e0e0;
+  --nav-overlay: #000000;
+}
+
+[data-theme='light'] {
+  --bg-color: #f7f8e2;
+  --text-main: #1a1a1a;
+  --text-secondary: #3a3939;
+  --text-muted: #888888;
+  --border-color: #d1d1d1;
+  --accent-color: #1a1a1a;
+  --nav-overlay: #f7f8e2;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 * {
@@ -11,7 +29,10 @@
 }
 
 body {
-  background-color: #000;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }

@@ -1,16 +1,13 @@
 import React from 'react';
+import './Footer.css';
 
 const Footer = () => {
-    const year = new Date().getFullYear();
+    const currentYear = new Date().getFullYear();
+
     return (
-        <footer className="footer">
-            <div className="footer-line"></div>
-            <div className="footer-bottom">
-                <p>&copy; {year} Portfolio Personal</p>
-                <div className="footer-socials">
-                    <a href="#">LinkedIn</a>
-                    <a href="#">GitHub</a>
-                </div>
+        <footer className="footer-container">
+            <div className="footer-credits">
+                © {currentYear} — Diseñado y Desarrollado por Ti
             </div>
         </footer>
     );
