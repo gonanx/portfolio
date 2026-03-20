@@ -47,18 +47,18 @@ function App() {
         </div>
       </button>
 
-      <Section range={[0, 0.05, 0.12, 0.18]} zIndex={1}>
+      <Section range={[0, 0.05, 0.12, 0.18]} zIndex={10}>
         <Hero />
       </Section>
 
-      <Section range={[0.18, 0.23, 0.33, 0.38]} zIndex={2}>
+      <Section range={[0.18, 0.23, 0.33, 0.38]} zIndex={20}>
         <div id="projects" className="projects-container">
           <h2 className="section-title">Mis Proyectos</h2>
           <ProjectList />
         </div>
       </Section>
 
-      <Section range={[0.38, 0.43, 0.53, 0.58]} zIndex={3}>
+      <Section range={[0.38, 0.43, 0.53, 0.58]} zIndex={30}>
         <div id="cv" className="cv-section">
           <h2 className="section-title">Trayectoria</h2>
           <div className="cv-grid">
@@ -88,26 +88,26 @@ function App() {
         </div>
       </Section>
 
-      <Section range={[0.58, 0.63, 0.73, 0.78]} zIndex={4}>
+      <Section range={[0.58, 0.63, 0.73, 0.78]} zIndex={40}>
         <div id="skills" className="skills-container">
           <h2 className="section-title">Aptitudes</h2>
           <Skills />
         </div>
       </Section>
 
-      <Section range={[0.78, 0.83, 0.88, 0.93]} zIndex={5}>
+      <Section range={[0.78, 0.83, 0.88, 0.93]} zIndex={50}>
         <div id="about" className="about-section">
           <h2 className="section-title">Sobre Mí</h2>
           <AboutMe />
         </div>
       </Section>
 
-      <Section range={[0.93, 0.96, 1.0, 1.1]} zIndex={6}>
+      <Section range={[0.93, 0.96, 1.0, 1.0]} zIndex={60}>
         <div id="contact" className="contact-wrapper-final">
           <h2 className="section-title">Contacto</h2>
           <div className="contact-main-content">
             <p className="contact-sub">¿Creamos algo increíble juntos?</p>
-            <a href="mailto:tuemail@ejemplo.com" className="email-link">
+            <a href="mailto:xgonan99@gmail.com" className="email-link">
               xgonan99@gmail.com
             </a>
             <div className="contact-socials">
