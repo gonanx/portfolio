@@ -1,0 +1,75 @@
+.skills-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 80px;
+    margin-top: 60px;
+}
+
+.skills-column {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.column-label {
+    font-size: 0.9rem;
+    /* Títulos de categoría más grandes */
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    color: #555;
+    font-weight: 600;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 45px;
+    /* Más espacio entre los iconos más grandes */
+}
+
+.skill-icon-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    color: #A0A0A0;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.icon-box {
+    font-size: 3rem;
+    /* Iconos notablemente más grandes */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skill-name {
+    font-size: 0.75rem;
+    /* Texto de aptitud ligeramente más grande */
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 500;
+}
+
+.skill-icon-wrapper:hover {
+    color: #FFFFFF;
+    transform: translateY(-10px);
+}
+
+.skill-icon-wrapper:hover .icon-box {
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.2));
+}
+
+@media (max-width: 968px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .skills-list {
+        justify-content: flex-start;
+        gap: 35px;
+    }
+}

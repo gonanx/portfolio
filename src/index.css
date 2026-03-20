@@ -1,0 +1,17 @@
+:root {
+  background-color: #000;
+  color: #fff;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
