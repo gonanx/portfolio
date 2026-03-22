@@ -9,7 +9,7 @@ const Navbar = () => {
         const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
         window.scrollTo({
             top: totalHeight * percentage,
-            behavior: 'auto'
+            behavior: 'smooth'
         });
         setIsOpen(false);
     };

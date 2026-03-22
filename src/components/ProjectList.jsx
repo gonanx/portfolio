@@ -41,7 +41,7 @@ const containerVariants = {
 };
 
 const itemVariants = {
-    hidden: { y: 30, opacity: 0 },
+    hidden: { y: 20, opacity: 0 },
     visible: {
         y: 0,
         opacity: 1,
@@ -58,7 +58,8 @@ const ProjectList = () => {
             className="projects-grid"
             variants={containerVariants}
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
+            viewport={{ once: true }}
         >
             {projects.map((project, index) => (
                 <motion.a
@@ -68,12 +69,11 @@ const ProjectList = () => {
                     rel="noopener noreferrer"
                     className="project-item-link"
                     variants={itemVariants}
-                    whileHover={{ x: 15 }}
+                    whileHover={{ x: 10 }}
                     transition={{
                         type: "spring",
                         stiffness: 100,
-                        damping: 20,
-                        layout: { duration: 0.3 }
+                        damping: 20
                     }}
                 >
                     <div className="project-item-content">

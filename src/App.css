@@ -1,3 +1,32 @@
+:root {
+  --bg-color: #ffffff;
+  --text-main: #1a1a1a;
+  --text-secondary: #4a4a4a;
+  --text-muted: #888888;
+  --border-color: #e0e0e0;
+}
+
+[data-theme='dark'] {
+  --bg-color: #0a0a0a;
+  --text-main: #ffffff;
+  --text-secondary: #b0b0b0;
+  --text-muted: #666666;
+  --border-color: #222222;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 .main-container {
   position: relative;
   width: 100%;
@@ -6,7 +35,7 @@
 }
 
 .section-title {
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
   font-weight: 300;
   margin-bottom: 60px;
   text-transform: uppercase;
@@ -50,7 +79,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 35px 0;
+  padding: 30px 0;
   width: 100%;
   transition: border-color 0.4s ease;
 }
@@ -66,19 +95,19 @@
 .project-left {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 30px;
 }
 
 .project-title {
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-size: clamp(1.1rem, 1.8vw, 1.5rem);
   font-weight: 300;
   margin: 0;
 }
 
 .project-category {
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   text-transform: uppercase;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.2em;
   color: var(--text-muted);
   transition: color 0.4s ease;
 }
@@ -99,6 +128,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: 0 auto;
 }
 
 .cv-grid {
@@ -137,9 +167,18 @@
 }
 
 .cv-text {
-  font-size: 1.1rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text-main);
+  margin-top: 5px;
+}
+
+.description {
+  font-size: 0.95rem;
   font-weight: 300;
+  color: var(--text-secondary);
   margin: 0;
+  line-height: 1.4;
 }
 
 /* --- CONTACTO --- */
@@ -150,12 +189,10 @@
   flex-direction: column;
   box-sizing: border-box;
   padding: 120px 0 40px 0;
-  /* Aumentado el padding superior para no chocar con Navbar */
 }
 
 .contact-main-content {
   flex: 1;
-  /* Toma todo el espacio central */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -264,6 +301,41 @@
 }
 
 @media (max-width: 768px) {
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+  }
+
+  .cv-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .cv-item {
+    margin-bottom: 25px;
+    padding-left: 15px;
+  }
+
+  .column-label {
+    font-size: 0.75rem;
+    margin-bottom: 20px;
+  }
+
+  .cv-text {
+    font-size: 1.1rem;
+    /* Texto principal reducido en móvil */
+  }
+
+  .description {
+    font-size: 0.85rem;
+    /* Descripción reducida en móvil */
+    line-height: 1.3;
+  }
+
+  .cv-date {
+    font-size: 0.65rem;
+  }
+
   .contact-wrapper-final {
     padding-top: 100px;
   }
@@ -273,10 +345,5 @@
     right: 20px;
     width: 42px;
     height: 42px;
-  }
-
-  .cv-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
   }
 }

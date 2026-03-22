@@ -65,23 +65,32 @@ function App() {
             <div className="cv-column">
               <span className="column-label">Experiencia</span>
               <div className="cv-item">
-                <span className="cv-date">2024 — PRESENTE</span>
-                <p className="cv-text">Diseñador Web Freelance</p>
+                <span className="cv-date">2024 - 2025</span>
+                <h2 className="cv-text">Stellantis Vigo</h2>
+                <p className="description">Operario en línea de montaje</p>
               </div>
               <div className="cv-item">
-                <span className="cv-date">2023 — 2024</span>
-                <p className="cv-text">Prácticas UI en Estudio Creativo</p>
+                <span className="cv-date">2020 - 2024</span>
+                <h2 className="cv-text">Atendo Calidade</h2>
+                <p className="description">Auxiliar sociosanitario de personas dependientes en domicilio</p>
+              </div>
+              <div className="cv-item">
+                <span className="cv-date">2016</span>
+                <h2 className="cv-text">Plycem Construsistemas</h2>
+                <p className="description">Practicas profesionales para la obtención de Bachiller</p>
               </div>
             </div>
             <div className="cv-column">
               <span className="column-label">Educación</span>
               <div className="cv-item">
-                <span className="cv-date">2022 — 2026</span>
-                <p className="cv-text">Grado en Diseño y Desarrollo Web</p>
+                <span className="cv-date">2025 - 2026</span>
+                <h2 className="cv-text">Certificado Profesional N3 Desenvolvimiento de Aplicaciones con Tecnologías Web</h2>
+                <p className="description">FORMACOM</p>
               </div>
               <div className="cv-item">
-                <span className="cv-date">2020 — 2022</span>
-                <p className="cv-text">Bachillerato de Artes</p>
+                <span className="cv-date">2016</span>
+                <h2 className="cv-text">Bachillerato de Informática</h2>
+                <p className="description">INTEC</p>
               </div>
             </div>
           </div>

@@ -5,7 +5,7 @@ import './AboutMe.css';
 const AboutMe = () => {
     const details = [
         { label: "Localización", value: "Vigo, España" },
-        { label: "Intereses", value: "UI Design, Open Source, Fotografía" },
+        { label: "Intereses", value: "UX/UI Design, Diseño Gráfico, Prompting" },
         { label: "Idiomas", value: "Español, Inglés" }
     ];
 
@@ -41,8 +41,8 @@ const AboutMe = () => {
         >
             <motion.p className="about-text-main" variants={itemVariants}>
                 Soy un desarrollador y diseñador enfocado en crear experiencias digitales
-                que combinan <strong>estética minimalista</strong> con <strong>funcionalidad técnica</strong>.
-                Mi objetivo es transformar ideas complejas en interfaces intuitivas y memorables.
+                que combinen <strong>estética minimalista</strong> con <strong>funcionalidad técnica</strong>.
+                Mi objetivo es transformar ideas complejas en interfaces intuitivas y muy visuales.
             </motion.p>
 
             <motion.div className="about-details-grid" variants={itemVariants}>

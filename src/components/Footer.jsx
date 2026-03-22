@@ -7,7 +7,7 @@ const Footer = () => {
     return (
         <footer className="footer-container">
             <div className="footer-credits">
-                © {currentYear} — Diseñado y Desarrollado por Ti
+                © {currentYear} — Diseñado y Desarrollado por gonanx
             </div>
         </footer>
     );
