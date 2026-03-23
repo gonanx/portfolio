@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Navbar from './components/Navbar.jsx';
 import Hero from './components/Hero.jsx';
 import Section from './components/Section.jsx';
@@ -11,6 +12,13 @@ import './App.css';
 
 function App() {
   const [theme, setTheme] = useState('dark');
+  const { scrollYProgress } = useScroll();
+
+  const decorOpacity = useTransform(
+    scrollYProgress,
+    [0.36, 0.40, 0.50, 0.56],
+    [0, 1, 1, 0]
+  );
 
   useEffect(() => {
     window.history.scrollRestoration = 'manual';
@@ -66,7 +74,7 @@ function App() {
       <Section range={[0.36, 0.42, 0.50, 0.56]} zIndex={30}>
         <div id="cv" className="cv-section">
           <h2 className="section-title">Trayectoria</h2>
-          <div className="cv-grid">
+          <motion.div className="cv-grid" style={{ opacity: decorOpacity }}>
             <div className="cv-column">
               <span className="column-label">Experiencia</span>
               <div className="cv-item">
@@ -98,7 +106,7 @@ function App() {
                 <p className="description">INTEC, Honduras</p>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </Section>
 

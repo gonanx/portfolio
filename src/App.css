@@ -131,10 +131,11 @@ body {
   color: var(--text-main);
 }
 
-/* --- Trayectoria (CV) --- */
+/* --- Trayectoria (CV) - Optimización de tamaño --- */
 .cv-section {
   width: 100%;
-  max-width: 1100px;
+  max-width: 800px;
+  /* Reducción drástica del ancho solo aquí */
   margin: 0 auto;
   padding: var(--section-gap) var(--space-unit);
 }
@@ -142,7 +143,8 @@ body {
 .cv-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(40px, 8vw, 100px);
+  gap: clamp(20px, 4vw, 40px);
+  /* Menos espacio entre Experiencia y Educación */
 }
 
 .cv-column {
@@ -151,8 +153,9 @@ body {
 }
 
 .cv-item {
-  margin-bottom: var(--space-unit);
-  padding-left: 20px;
+  margin-bottom: 20px;
+  /* Altura de los bloques reducida */
+  padding-left: 15px;
   border-left: 1px solid var(--border-color);
   transition: border-color 0.4s ease;
 }
@@ -162,35 +165,38 @@ body {
 }
 
 .column-label {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
+  /* Etiqueta más pequeña */
   text-transform: uppercase;
-  letter-spacing: 0.4em;
+  letter-spacing: 0.3em;
   color: var(--text-muted);
   font-weight: 600;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   display: block;
 }
 
 .cv-date {
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
   color: var(--text-muted);
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 
 .cv-text {
-  font-size: clamp(1.1rem, 2.5vw, 1.25rem);
+  font-size: 1.04rem;
+  /* Tamaño fijo más contenido */
   font-weight: 500;
   color: var(--text-main);
 }
 
 .description {
-  font-size: clamp(0.85rem, 1.8vw, 0.95rem);
+  font-size: 0.8rem;
+  /* Descripción más compacta */
   font-weight: 300;
   color: var(--text-secondary);
-  line-height: 1.5;
-  margin-top: 5px;
+  line-height: 1.2;
+  margin-top: 2px;
 }
 
 /* --- Contacto --- */
@@ -255,7 +261,6 @@ body {
   bottom: clamp(20px, 5vh, 40px);
   right: clamp(20px, 5vw, 40px);
   z-index: 9999;
-  /* Asegura que esté sobre las secciones fijas */
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -296,7 +301,6 @@ body {
   transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
 }
 
-/* Lógica de visibilidad de iconos según el tema */
 .icon-wrapper.dark .sun-icon {
   opacity: 1;
   transform: scale(1) rotate(0deg);
@@ -317,18 +321,65 @@ body {
   transform: scale(1) rotate(0deg);
 }
 
-/* Media Queries */
+/* Media Queries - Ajustes para Trayectoria en Móvil */
 @media (max-width: 768px) {
   .cv-grid {
     grid-template-columns: 1fr;
     gap: 40px;
+    width: 80vw;
+    /* Más estrecho en móvil para evitar que se desparrame */
+    margin: 0 auto;
   }
 
   .section-title {
+    font-size: 8vw;
     text-align: center;
+    margin-bottom: 10vw;
   }
 
   .cv-item {
-    padding-left: 15px;
+    padding-left: 4vw;
+    margin-bottom: 6vw;
+    border-left: 2px solid var(--border-color);
+  }
+
+  .cv-text {
+    font-size: 5vw;
+  }
+
+  .description {
+    font-size: 3.8vw;
+    max-width: 100%;
+  }
+
+  .column-label {
+    font-size: 3.2vw;
+    margin-bottom: 5vw;
+    text-align: center;
+  }
+
+  .theme-toggle-circular {
+    bottom: 6vw;
+    right: 6vw;
+    width: 12vw;
+    height: 12vw;
+  }
+
+  .sun-icon,
+  .moon-icon {
+    width: 5.5vw;
+    height: 5.5vw;
+  }
+
+  .project-item-content {
+    padding: 6vw 0;
+  }
+
+  .project-title {
+    font-size: 5vw;
+  }
+
+  .email-link {
+    font-size: 8.5vw;
   }
 }

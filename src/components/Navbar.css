@@ -7,7 +7,8 @@
     justify-content: flex-start;
     align-items: center;
     padding: 40px 60px;
-    z-index: 9999;
+    z-index: 10001;
+    /* Asegura estar por encima de otros elementos fijos */
 }
 
 .nav-brand {
@@ -16,7 +17,8 @@
     letter-spacing: 0.3em;
     color: var(--text-main);
     cursor: pointer;
-    z-index: 10001;
+    z-index: 10002;
+    /* Siempre por encima del overlay */
     transition: opacity 0.3s ease;
     user-select: none;
 }
@@ -66,8 +68,27 @@
     transform: scale(1.05);
 }
 
+/* Media Queries - Coherencia Atómica en Móvil */
 @media (max-width: 768px) {
     .navbar {
-        padding: 30px;
+        padding: 8vw 6vw;
+        /* Padding proporcional al ancho de pantalla */
+    }
+
+    .nav-brand {
+        font-size: 3.5vw;
+        /* Texto de marca escalable */
+        letter-spacing: 0.25em;
+    }
+
+    .nav-links-container {
+        gap: 6vw;
+        /* Espaciado entre enlaces proporcional */
+    }
+
+    .nav-links-container a {
+        font-size: 10vw;
+        /* Enlaces grandes y legibles en vertical */
+        letter-spacing: 0.05em;
     }
 }

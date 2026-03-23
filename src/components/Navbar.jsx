@@ -48,10 +48,10 @@ const Navbar = () => {
 
     const navLinks = [
         { name: "Inicio", pos: 0.05 },
-        { name: "Proyectos", pos: 0.26 },
-        { name: "Trayectoria", pos: 0.46 },
-        { name: "Aptitudes", pos: 0.66 },
-        { name: "Sobre Mí", pos: 0.85 },
+        { name: "Proyectos", pos: 0.22 },
+        { name: "Trayectoria", pos: 0.42 },
+        { name: "Aptitudes", pos: 0.62 },
+        { name: "Sobre Mí", pos: 0.82 },
         { name: "Contacto", pos: 0.97 }
     ];
 
