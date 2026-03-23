@@ -40,9 +40,9 @@ const AboutMe = () => {
             viewport={{ once: true }}
         >
             <motion.p className="about-text-main" variants={itemVariants}>
-                Soy un desarrollador y diseñador enfocado en crear experiencias digitales
+                Soy un intento de diseñador y desarrollador web enfocado en crear experiencias digitales
                 que combinen <strong>estética minimalista</strong> con <strong>funcionalidad técnica</strong>.
-                Mi objetivo es transformar ideas complejas en interfaces intuitivas y muy visuales.
+                Mi objetivo es transformar ideas complejas en interfaces intuitivas.
             </motion.p>
 
             <motion.div className="about-details-grid" variants={itemVariants}>
