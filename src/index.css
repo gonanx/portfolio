@@ -6,6 +6,10 @@
   --border-color: rgba(255, 255, 255, 0.1);
   --accent-color: #e0e0e0;
   --nav-overlay: #000000;
+  --space-xs: clamp(15px, 3vw, 25px);
+  --space-s: clamp(25px, 5vw, 45px);
+  --space-m: clamp(50px, 10vw, 80px);
+  --space-l: clamp(80px, 15vw, 120px);
 }
 
 [data-theme='light'] {
@@ -15,11 +19,12 @@
   --text-muted: #888888;
   --border-color: #d1d1d1;
   --accent-color: #1a1a1a;
-  --nav-overlay: #f7f8e2;
+  --nav-overlay: #ffffff;
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
+  height: 100%;
 }
 
 * {
@@ -34,5 +39,7 @@ body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  line-height: 1.5;
 }

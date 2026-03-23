@@ -1,7 +1,7 @@
 .projects-grid {
     width: 100%;
     max-width: 800px;
-    margin: 100px auto 40px auto;
+    margin: var(--space-m) auto;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -22,7 +22,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 0;
+    padding: clamp(20px, 3vw, 30px) 0;
     width: 100%;
     transition: border-color 0.4s ease;
 }
@@ -30,25 +30,27 @@
 .project-left {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: clamp(15px, 3vw, 30px);
 }
 
 .project-item-link:hover .project-item-content {
-    border-color: var(--accent-color);
+    border-color: var(--text-main);
 }
 
 .project-number {
     font-family: monospace;
     font-size: 0.65rem;
     color: var(--text-muted);
+    min-width: 25px;
 }
 
 .project-title {
-    font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
     font-weight: 300;
     margin: 0;
     letter-spacing: -0.01em;
     color: var(--text-secondary);
+    transition: color 0.3s ease;
 }
 
 .project-item-link:hover .project-title {
@@ -64,17 +66,13 @@
 }
 
 .project-item-link:hover .project-category {
-    color: var(--accent-color);
+    color: var(--text-main);
 }
 
 @media (max-width: 768px) {
     .projects-grid {
-        max-width: 90%;
-        margin: 60px auto 20px auto;
-    }
-
-    .project-left {
-        gap: 15px;
+        max-width: 100%;
+        margin: var(--space-s) auto;
     }
 
     .project-category {

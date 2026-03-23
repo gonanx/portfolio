@@ -9,7 +9,7 @@ const Navbar = () => {
         const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
         window.scrollTo({
             top: totalHeight * percentage,
-            behavior: 'smooth'
+            behavior: 'auto'
         });
         setIsOpen(false);
     };
@@ -48,11 +48,11 @@ const Navbar = () => {
 
     const navLinks = [
         { name: "Inicio", pos: 0.05 },
-        { name: "Proyectos", pos: 0.23 },
-        { name: "Trayectoria", pos: 0.43 },
-        { name: "Aptitudes", pos: 0.63 },
-        { name: "Sobre Mí", pos: 0.83 },
-        { name: "Contacto", pos: 0.98 }
+        { name: "Proyectos", pos: 0.26 },
+        { name: "Trayectoria", pos: 0.46 },
+        { name: "Aptitudes", pos: 0.66 },
+        { name: "Sobre Mí", pos: 0.85 },
+        { name: "Contacto", pos: 0.97 }
     ];
 
     return (
@@ -72,6 +72,7 @@ const Navbar = () => {
                         initial="closed"
                         animate="opened"
                         exit="closed"
+                        style={{ backgroundColor: 'var(--nav-overlay)' }}
                     >
                         <div className="nav-links-container">
                             {navLinks.map((link, i) => (

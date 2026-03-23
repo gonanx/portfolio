@@ -1,15 +1,15 @@
 .about-content {
     width: 100%;
     max-width: 900px;
-    margin-top: 40px;
+    margin-top: var(--space-s);
 }
 
 .about-text-main {
-    font-size: clamp(1.4rem, 3vw, 2.2rem);
+    font-size: clamp(1.3rem, 3vw, 2.2rem);
     line-height: 1.5;
     color: var(--text-secondary);
     font-weight: 300;
-    margin-bottom: 80px;
+    margin-bottom: var(--space-m);
 }
 
 .about-text-main strong {
@@ -20,9 +20,9 @@
 .about-details-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+    gap: clamp(30px, 5vw, 40px);
     border-top: 1px solid var(--border-color);
-    padding-top: 40px;
+    padding-top: var(--space-s);
 }
 
 .about-detail-item {
@@ -48,10 +48,16 @@
     .about-details-grid {
         grid-template-columns: 1fr;
         gap: 30px;
+        padding-top: 30px;
     }
 
     .about-text-main {
-        font-size: 1.3rem;
+        font-size: 1.25rem;
         margin-bottom: 40px;
+        line-height: 1.4;
+    }
+
+    .about-content {
+        margin-top: 20px;
     }
 }

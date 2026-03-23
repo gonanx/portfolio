@@ -1,18 +1,31 @@
 :root {
-  --bg-color: #ffffff;
-  --text-main: #1a1a1a;
-  --text-secondary: #4a4a4a;
-  --text-muted: #888888;
-  --border-color: #e0e0e0;
-  --nav-overlay: #ffffff;
-}
-
-[data-theme='dark'] {
+  /* Modo Oscuro (Predeterminado) */
   --bg-color: #0a0a0a;
   --text-main: #ffffff;
   --text-secondary: #b0b0b0;
   --text-muted: #666666;
-  --border-color: #222222;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --accent-color: #e0e0e0;
+  --nav-overlay: #000000;
+
+  /* Escala de Espaciado Fluido */
+  --space-unit: clamp(20px, 4vw, 40px);
+  --section-gap: clamp(60px, 12vw, 100px);
+  --space-xs: clamp(15px, 3vw, 25px);
+  --space-s: clamp(25px, 5vw, 45px);
+  --space-m: clamp(50px, 10vw, 80px);
+  --space-l: clamp(80px, 15vw, 120px);
+}
+
+[data-theme='light'] {
+  /* Modo Claro (Tono Crema/Hueso) */
+  --bg-color: #f7f8e2;
+  --text-main: #1a1a1a;
+  --text-secondary: #3a3939;
+  --text-muted: #888888;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --accent-color: #1a1a1a;
+  --nav-overlay: #ffffff;
 }
 
 * {
@@ -21,24 +34,33 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-main);
-  transition: background-color 0.3s ease, color 0.3s ease;
+html {
+  scroll-behavior: auto;
+  height: 100%;
 }
 
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  transition: background-color 0.4s ease, color 0.4s ease;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+
+/* Contenedor Principal */
 .main-container {
   position: relative;
   width: 100%;
   background-color: var(--bg-color);
-  min-height: 100vh;
 }
 
+/* Títulos de Sección */
 .section-title {
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
   font-weight: 300;
-  margin-bottom: 60px;
+  margin-bottom: var(--space-unit);
   text-transform: uppercase;
   letter-spacing: 0.15em;
   text-align: left;
@@ -46,7 +68,7 @@ body {
   color: var(--text-main);
 }
 
-/* --- PROYECTOS --- */
+/* --- Proyectos --- */
 .projects-container {
   width: 100%;
   display: flex;
@@ -54,16 +76,15 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  padding: var(--section-gap) var(--space-unit);
 }
 
 .projects-grid {
   width: 100%;
   max-width: 800px;
-  margin: 40px auto 0 auto;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  position: relative;
-  z-index: 10;
 }
 
 .project-item-link {
@@ -73,36 +94,29 @@ body {
   width: 100%;
   border-bottom: 1px solid var(--border-color);
   outline: none;
-  overflow: hidden;
 }
 
 .project-item-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 0;
-  width: 100%;
+  padding: clamp(20px, 4vw, 30px) 0;
   transition: border-color 0.4s ease;
 }
 
-[data-theme='light'] .project-item-link:hover .project-item-content {
-  border-color: #1a1a1a;
-}
-
-[data-theme='dark'] .project-item-link:hover .project-item-content {
-  border-color: #ffffff;
+.project-item-link:hover .project-item-content {
+  border-color: var(--text-main);
 }
 
 .project-left {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: clamp(15px, 3vw, 30px);
 }
 
 .project-title {
-  font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
   font-weight: 300;
-  margin: 0;
 }
 
 .project-category {
@@ -113,36 +127,34 @@ body {
   transition: color 0.4s ease;
 }
 
-[data-theme='light'] .project-item-link:hover .project-category {
-  color: #1a1a1a;
+.project-item-link:hover .project-category {
+  color: var(--text-main);
 }
 
-[data-theme='dark'] .project-item-link:hover .project-category {
-  color: #ffffff;
-}
-
-/* --- TRAYECTORIA --- */
+/* --- Trayectoria (CV) --- */
 .cv-section {
   width: 100%;
   max-width: 1100px;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   margin: 0 auto;
+  padding: var(--section-gap) var(--space-unit);
 }
 
 .cv-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 100px;
+  gap: clamp(40px, 8vw, 100px);
+}
+
+.cv-column {
+  display: flex;
+  flex-direction: column;
 }
 
 .cv-item {
-  margin-bottom: 45px;
-  padding-left: 25px;
+  margin-bottom: var(--space-unit);
+  padding-left: 20px;
   border-left: 1px solid var(--border-color);
-  transition: all 0.4s ease;
+  transition: border-color 0.4s ease;
 }
 
 .cv-item:hover {
@@ -150,7 +162,7 @@ body {
 }
 
 .column-label {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.4em;
   color: var(--text-muted);
@@ -164,32 +176,31 @@ body {
   letter-spacing: 0.2em;
   color: var(--text-muted);
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .cv-text {
-  font-size: 1.25rem;
+  font-size: clamp(1.1rem, 2.5vw, 1.25rem);
   font-weight: 500;
   color: var(--text-main);
-  margin-top: 5px;
 }
 
 .description {
-  font-size: 0.95rem;
+  font-size: clamp(0.85rem, 1.8vw, 0.95rem);
   font-weight: 300;
   color: var(--text-secondary);
-  margin: 0;
-  line-height: 1.4;
+  line-height: 1.5;
+  margin-top: 5px;
 }
 
-/* --- CONTACTO --- */
+/* --- Contacto --- */
 .contact-wrapper-final {
   width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
-  padding: 120px 0 40px 0;
+  padding: 100px var(--space-unit) 40px;
+  justify-content: space-between;
 }
 
 .contact-main-content {
@@ -210,7 +221,7 @@ body {
 }
 
 .email-link {
-  font-size: clamp(1.5rem, 5vw, 3rem);
+  font-size: clamp(1.4rem, 6vw, 3rem);
   color: var(--text-main);
   text-decoration: none;
   font-weight: 200;
@@ -223,20 +234,14 @@ body {
 
 .contact-socials {
   display: flex;
-  gap: 40px;
-  margin-top: 20px;
+  gap: clamp(20px, 4vw, 40px);
 }
 
 .social-icon-link {
   color: var(--text-main);
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.social-icon-link svg {
-  width: 100%;
-  height: 100%;
 }
 
 .social-icon-link:hover {
@@ -244,24 +249,33 @@ body {
   transform: translateY(-3px);
 }
 
-/* --- BOTÓN TEMA --- */
+/* --- Botón de Tema Circular --- */
 .theme-toggle-circular {
   position: fixed;
-  bottom: 40px;
-  right: 40px;
-  z-index: 10002;
-  width: 50px;
-  height: 50px;
+  bottom: clamp(20px, 5vh, 40px);
+  right: clamp(20px, 5vw, 40px);
+  z-index: 9999;
+  /* Asegura que esté sobre las secciones fijas */
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   background-color: var(--text-main);
   color: var(--bg-color);
-  border: 1px solid var(--text-main);
+  border: 1px solid var(--border-color);
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 0.3s ease;
-  overflow: hidden;
+  transition: transform 0.3s ease, background-color 0.4s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle-circular:hover {
+  transform: scale(1.05);
+}
+
+.theme-toggle-circular:active {
+  transform: scale(0.95);
 }
 
 .icon-wrapper {
@@ -278,9 +292,11 @@ body {
   position: absolute;
   width: 20px;
   height: 20px;
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+  stroke: currentColor;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
 }
 
+/* Lógica de visibilidad de iconos según el tema */
 .icon-wrapper.dark .sun-icon {
   opacity: 1;
   transform: scale(1) rotate(0deg);
@@ -301,50 +317,18 @@ body {
   transform: scale(1) rotate(0deg);
 }
 
+/* Media Queries */
 @media (max-width: 768px) {
-  .section-title {
-    font-size: 1.8rem;
-    margin-bottom: 40px;
-  }
-
   .cv-grid {
     grid-template-columns: 1fr;
-    gap: 35px;
+    gap: 40px;
+  }
+
+  .section-title {
+    text-align: center;
   }
 
   .cv-item {
-    margin-bottom: 25px;
     padding-left: 15px;
-  }
-
-  .column-label {
-    font-size: 0.75rem;
-    margin-bottom: 20px;
-  }
-
-  .cv-text {
-    font-size: 1.1rem;
-    /* Texto principal reducido en móvil */
-  }
-
-  .description {
-    font-size: 0.85rem;
-    /* Descripción reducida en móvil */
-    line-height: 1.3;
-  }
-
-  .cv-date {
-    font-size: 0.65rem;
-  }
-
-  .contact-wrapper-final {
-    padding-top: 100px;
-  }
-
-  .theme-toggle-circular {
-    bottom: 20px;
-    right: 20px;
-    width: 42px;
-    height: 42px;
   }
 }
