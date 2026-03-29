@@ -1,5 +1,5 @@
+// src/components/Footer.jsx
 import React from 'react';
-import './Footer.css';
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -7,7 +7,7 @@ const Footer = () => {
     return (
         <footer className="footer-container">
             <div className="footer-credits">
-                © {currentYear} — Diseñado y Desarrollado por gonanx
+                © {currentYear} Diseñado y Desarrollado por gonanx
             </div>
         </footer>
     );
